@@ -1,8 +1,15 @@
-<form class="search__form" (ngSubmit)="addItem()">
+<form class="search__form" (ngSubmit)="addItem($event)">
   <input
+    [(ngModel)]="newItem"
     type="text"
     class="search__form__input"
     placeholder="City Name"
+    name="newItem"
   />
-  <input class="search__form__btn" type="submit" value="Add" />
+  <input
+    class="search__form__btn"
+    type="submit"
+    value="Add"
+    [disabled]="newItem === ''"
+  />
 </form>

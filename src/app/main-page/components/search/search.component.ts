@@ -1,4 +1,6 @@
+import { WeatherService } from './../weather.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -6,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  constructor() {}
+  inputValue: string;
 
-  ngOnInit(): void {}
+  result$: Observable<any>;
+  newItem: string;
 
-  addItem() {}
+  constructor(private weatherService: WeatherService) {
+    this.newItem = '';
+  }
+
+  ngOnInit(): void {
+    console.log(this.result$);
+  }
+
+  addItem(event) {
+    this.result$ = this.weatherService.getCityWeather(this.newItem);
+    this.newItem = '';
+    event.preventDefault();
+  }
 }
