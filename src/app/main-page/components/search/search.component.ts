@@ -18,12 +18,12 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.result$);
   }
 
   addItem(event) {
     this.result$ = this.weatherService.getCityWeather(this.newItem);
     this.newItem = '';
     event.preventDefault();
+    console.log(this.result$);
   }
 }
