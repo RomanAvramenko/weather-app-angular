@@ -1,4 +1,4 @@
-<form class="search__form" (ngSubmit)="addItem($event)">
+<form class="search__form" (ngSubmit)="searchCity()">
   <input
     [(ngModel)]="newItem"
     type="text"
@@ -13,3 +13,8 @@
     [disabled]="newItem === ''"
   />
 </form>
+
+<div class="search__form__alert">{{ message }}</div>
+<!-- <div *ngIf="weather.errors$ | async as error" class="search__form__alert">
+  {{ error }}
+</div> -->

@@ -1,0 +1,19 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 25em;
+
+  &__list {
+    max-width: 25em;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 640px) {
+  .box {
+    width: 20em;
+  }
+}

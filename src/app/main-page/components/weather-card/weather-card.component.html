@@ -1,0 +1,17 @@
+<li class="item">
+  <div class="item__temp">{{ item.main.temp | number: "1.0-0" }}&deg;</div>
+  <img
+    class="item__img"
+    src="https://openweathermap.org/img/wn/{{ item.weather[0].icon }}@2x.png"
+    alt=""
+  />
+  <button class="item__btn">
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="item__name">
+    <span>{{ item.name }}</span>
+  </div>
+  <button [routerLink]="['/expand', item.name]" class="item__expand">
+    more &nbsp; >>
+  </button>
+</li>

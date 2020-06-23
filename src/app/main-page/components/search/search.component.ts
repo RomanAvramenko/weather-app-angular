@@ -1,29 +1,24 @@
 import { WeatherService } from './../weather.service';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  providers: [WeatherService],
 })
 export class SearchComponent implements OnInit {
-  inputValue: string;
+  @Output() searchEvent: EventEmitter<string> = new EventEmitter();
+  @Input() message: string;
 
-  result$: Observable<any>;
-  newItem: string;
+  newItem: string = '';
 
-  constructor(private weatherService: WeatherService) {
+  constructor(public weather: WeatherService) {}
+
+  ngOnInit(): void {}
+
+  searchCity() {
+    this.searchEvent.emit(this.newItem);
     this.newItem = '';
-  }
-
-  ngOnInit(): void {
-  }
-
-  addItem(event) {
-    this.result$ = this.weatherService.getCityWeather(this.newItem);
-    this.newItem = '';
-    event.preventDefault();
-    console.log(this.result$);
   }
 }

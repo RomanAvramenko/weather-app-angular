@@ -1,0 +1,65 @@
+.item {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 4em 1fr 1fr 2em;
+  grid-template-areas:
+    "temp . img button"
+    "city city expand expand";
+
+  &__name {
+    grid-area: city;
+    justify-self: self-start;
+    padding-left: 0.5em;
+  }
+
+  &__temp {
+    grid-area: temp;
+    justify-self: self-end;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+  }
+
+  &__img {
+    grid-area: img;
+    justify-self: self-end;
+    height: 4em;
+    width: 4em;
+    background-size: cover;
+  }
+
+  &__btn {
+    grid-area: button;
+    height: 1em;
+    font-size: 1em;
+    justify-self: self-end;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__expand {
+    grid-area: expand;
+    justify-self: self-end;
+    width: 50%;
+    text-decoration: none;
+    border: none;
+    border-radius: .3em;
+    color: rgb(0, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .item {
+    font-size: 0.6em;
+
+    &__img {
+      height: 3em;
+    }
+  }
+}

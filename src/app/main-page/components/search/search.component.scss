@@ -26,6 +26,12 @@
     outline: none;
     cursor: pointer;
   }
+
+  &__alert{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 640px) {
