@@ -1,3 +1,4 @@
+import { PersistenceModule } from 'angular-persistence';
 import { MainPageModule } from './main-page/main-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
     CommonLayoutComponent,
     ExpandPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MainPageModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MainPageModule,
+    HttpClientModule,
+    PersistenceModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
