@@ -25,9 +25,9 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.results = this.persistenceService.get('weather', StorageType.LOCAL);
-    console.log(this.results);
-    console.log(this.persistenceService.get('weather', StorageType.LOCAL));
+    if (this.persistenceService.get('weather', StorageType.LOCAL)) {
+      this.results = this.persistenceService.get('weather', StorageType.LOCAL);
+    }
   }
 
   addItem(newItem) {
@@ -40,5 +40,9 @@ export class MainPageComponent implements OnInit {
         this.message = 'This city is alredy exist';
       }
     });
+  }
+
+  deleteItem(id) {
+    this.results = this.results.filter((el) => el.id !== id);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-weather-card',
@@ -6,9 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./weather-card.component.scss'],
 })
 export class WeatherCardComponent implements OnInit {
+  @Output() deleteItem: EventEmitter<number> = new EventEmitter();
   @Input() item;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  deleteCard() {
+    this.deleteItem.emit(this.item.id);
+  }
 }
