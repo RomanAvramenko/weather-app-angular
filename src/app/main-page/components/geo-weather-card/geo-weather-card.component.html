@@ -1,0 +1,19 @@
+<div *ngIf="geoData" class="geoCard">
+  <div class="geoCard__temp">
+    <span>{{ geoData.main.temp | number: "1.0-0" }}&deg;</span>
+  </div>
+  <div class="geoCard__name">
+    <span>{{ geoData.name }}</span>
+  </div>
+  <div class="geoCard__img">
+    <img
+      src="https://openweathermap.org/img/wn/{{
+        geoData.weather[0].icon
+      }}@2x.png"
+      alt="desc"
+    />
+  </div>
+  <button [routerLink]="['/expand', geoData.name]" class="geoCard__expand">
+    more &nbsp; >>
+  </button>
+</div>

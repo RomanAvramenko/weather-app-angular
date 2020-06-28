@@ -1,9 +1,7 @@
 <div>
-  <app-search
-    (searchEvent)="addItem($event)"
-    [message]="message"
-  ></app-search>
+  <app-search (searchEvent)="addItem($event)" [message]="message"></app-search>
 </div>
+<app-geo-weather-card> </app-geo-weather-card>
 
 <div class="box">
   <ul class="box__list">

@@ -1,0 +1,49 @@
+.geoCard {
+  max-width: 25em;
+  width: 100%;
+  margin: 1em auto;
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(108, 99, 255);
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr;
+  justify-items: center;
+  grid-template-areas:
+    "temp img"
+    "city expand";
+  &__temp {
+    grid-area: temp;
+    font-size: 3em;
+  }
+
+  &__img {
+    grid-area: img;
+    justify-self: center;
+  }
+  &__name {
+    font-size: 1.2em;
+    grid-area: city;
+  }
+  &__expand {
+    grid-area: expand;
+    justify-self: self-end;
+    width: 50%;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    color: rgb(0, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .geoCard {
+    font-size: 0.6em;
+    &__img {
+      > img {
+        height: 6em;
+      }
+    }
+  }
+}

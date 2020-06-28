@@ -18,6 +18,14 @@ export class WeatherService {
       .pipe(catchError(this.handleError.bind(this)));
   }
 
+  getGeoWeather(lat, lon): Observable<any> {
+    return this.httpClient
+      .get(
+        `${environment.openWeatherUrl}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${environment.openWeatherApiKey}`
+      )
+      .pipe(catchError(this.handleError.bind(this)));
+  }
+
   handleError(error: HttpErrorResponse) {
     if (error.error.message === 'city not found') {
       this.errors$.next('This city is not exist');

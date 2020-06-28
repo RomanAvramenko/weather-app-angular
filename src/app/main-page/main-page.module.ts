@@ -5,10 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { MainPageComponent } from './main-page.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { GeoWeatherCardComponent } from './components/geo-weather-card/geo-weather-card.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
   exports: [MainPageComponent],
-  declarations: [SearchComponent, MainPageComponent, WeatherCardComponent],
+  declarations: [
+    SearchComponent,
+    MainPageComponent,
+    WeatherCardComponent,
+    GeoWeatherCardComponent,
+  ],
 })
 export class MainPageModule {}
