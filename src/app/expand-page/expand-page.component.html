@@ -1,1 +1,92 @@
-<p>expand-page works!</p>
+<div class="expand" *ngIf="forecast">
+  <h1 class="expand__name">{{ forecast.name }}</h1>
+  <ul class="expand__list">
+    <div class="expand__list__item">
+      {{ forecast.list[0].date | date: "EEEE" }}
+      <div>
+        {{ forecast.list[0].temp | number: "1.0-0" }}&deg;/
+        {{ forecast.list[1].temp | number: "1.0-0" }}&deg;
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://openweathermap.org/img/wn/{{
+            forecast.list[1].icon
+          }}.png"
+          alt=""
+        />
+      </div>
+      <div>{{ forecast.list[1].desc }}</div>
+    </div>
+    <div class="expand__list__item">
+      {{ forecast.list[2].date | date: "EEEE" }}
+      <div>
+        {{ forecast.list[2].temp | number: "1.0-0" }}&deg;/
+        {{ forecast.list[3].temp | number: "1.0-0" }}&deg;
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://openweathermap.org/img/wn/{{
+            forecast.list[3].icon
+          }}.png"
+          alt=""
+        />
+      </div>
+      <div>{{ forecast.list[3].desc }}</div>
+    </div>
+    <div class="expand__list__item">
+      {{ forecast.list[4].date | date: "EEEE" }}
+      <div>
+        {{ forecast.list[4].temp | number: "1.0-0" }}&deg;/
+        {{ forecast.list[5].temp | number: "1.0-0" }}&deg;
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://openweathermap.org/img/wn/{{
+            forecast.list[5].icon
+          }}.png"
+          alt=""
+        />
+      </div>
+      <div>{{ forecast.list[5].desc }}</div>
+    </div>
+    <div class="expand__list__item">
+      {{ forecast.list[6].date | date: "EEEE" }}
+      <div>
+        {{ forecast.list[6].temp | number: "1.0-0" }}&deg;/
+        {{ forecast.list[7].temp | number: "1.0-0" }}&deg;
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://openweathermap.org/img/wn/{{
+            forecast.list[7].icon
+          }}.png"
+          alt=""
+        />
+      </div>
+      <div>{{ forecast.list[7].desc }}</div>
+    </div>
+    <div class="expand__list__item">
+      {{ forecast.list[8].date | date: "EEEE" }}
+      <div>
+        {{ forecast.list[8].temp | number: "1.0-0" }}&deg;/
+        {{ forecast.list[9].temp | number: "1.0-0" }}&deg;
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://openweathermap.org/img/wn/{{
+            forecast.list[9].icon
+          }}.png"
+          alt=""
+        />
+      </div>
+      <div>{{ forecast.list[9].desc }}</div>
+    </div>
+  </ul>
+</div>
+
+<div className="picture"></div>

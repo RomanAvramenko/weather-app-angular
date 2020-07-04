@@ -1,4 +1,4 @@
-import { WeatherService } from './../weather.service';
+import { WeatherService } from './../../../shared/weather.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

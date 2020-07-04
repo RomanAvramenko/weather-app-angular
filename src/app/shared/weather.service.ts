@@ -1,4 +1,4 @@
-import { environment } from './../../../environments/environment';
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
@@ -22,6 +22,14 @@ export class WeatherService {
     return this.httpClient
       .get(
         `${environment.openWeatherUrl}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${environment.openWeatherApiKey}`
+      )
+      .pipe(catchError(this.handleError.bind(this)));
+  }
+
+  getForecast(cityName): Observable<any> {
+    return this.httpClient
+      .get(
+        `${environment.openWeatherUrl}forecast?q=${cityName}&units=metric&APPID=${environment.openWeatherApiKey}`
       )
       .pipe(catchError(this.handleError.bind(this)));
   }

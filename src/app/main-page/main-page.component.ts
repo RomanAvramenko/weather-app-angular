@@ -1,5 +1,5 @@
+import { WeatherService } from './../shared/weather.service';
 import { PersistenceService, StorageType } from 'angular-persistence';
-import { WeatherService } from './components/weather.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
