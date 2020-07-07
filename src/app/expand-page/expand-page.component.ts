@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ExpandPageComponent implements OnInit {
   forecast;
-  name = 'Expand';
+  image: string;
 
   constructor(
     private weatherService: WeatherService,
@@ -50,7 +50,9 @@ export class ExpandPageComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.weatherService.getForecast(params['id']).subscribe((data) => {
         this.forecast = this.transformData(data);
-        console.log(this.forecast);
+      });
+      this.weatherService.getImage(params['id']).subscribe((data) => {
+        this.image = data.results[Math.floor(Math.random() * 9)].urls.regular;
       });
     });
   }

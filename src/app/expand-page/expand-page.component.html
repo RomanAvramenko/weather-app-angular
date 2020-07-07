@@ -70,23 +70,29 @@
       <div>{{ forecast.list[7].desc }}</div>
     </div>
     <div class="expand__list__item">
-      {{ forecast.list[8].date | date: "EEEE" }}
+      {{ forecast.list[forecast.list.length - 2].date | date: "EEEE" }}
       <div>
-        {{ forecast.list[8].temp | number: "1.0-0" }}&deg;/
-        {{ forecast.list[9].temp | number: "1.0-0" }}&deg;
+        {{
+          forecast.list[forecast.list.length - 2].temp | number: "1.0-0"
+        }}&deg;/
+        {{
+          forecast.list[forecast.list.length - 1].temp | number: "1.0-0"
+        }}&deg;
       </div>
       <div>
         <img
           class="icon"
           src="https://openweathermap.org/img/wn/{{
-            forecast.list[9].icon
+            forecast.list[forecast.list.length - 1].icon
           }}.png"
           alt=""
         />
       </div>
-      <div>{{ forecast.list[9].desc }}</div>
+      <div>{{ forecast.list[forecast.list.length - 1].desc }}</div>
     </div>
   </ul>
 </div>
 
-<div className="picture"></div>
+<div>
+  <img src="{{ image }}" alt="" class="picture" />
+</div>

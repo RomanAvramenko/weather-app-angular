@@ -20,3 +20,11 @@ h6 {
 p {
   margin: 0;
 }
+
+svg#clouds {
+  position: fixed;
+  bottom: -150px;
+  left: -230px;
+  z-index: -10;
+  width: 1920px;
+}

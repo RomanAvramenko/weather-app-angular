@@ -34,6 +34,14 @@ export class WeatherService {
       .pipe(catchError(this.handleError.bind(this)));
   }
 
+  getImage(cityName): Observable<any> {
+    return this.httpClient
+      .get(
+        `${environment.unsplashUrl}client_id=${environment.unsplashApiKey}&page=1&query=${cityName} city buildings`
+      )
+      .pipe(catchError(this.handleError.bind(this)));
+  }
+
   handleError(error: HttpErrorResponse) {
     if (error.error.message === 'city not found') {
       this.errors$.next('This city is not exist');
